@@ -1,10 +1,10 @@
 from pyquery import PyQuery as pq
 
 #get all the 'r-ent' block of woman board of PTT
-def get_html():
+def get_content(_url):
 
 	#get html code of woman board of PTT
-	source = pq(url='https://www.ptt.cc/bbs/WomenTalk/index.html')
+	source = pq(url=_url)
 	item = source('.r-ent')
 
 	for i in range(3):
@@ -20,11 +20,11 @@ def get_html():
 	return item
 
 
-def crawler(source):
+def crawler(content):
 
 	word = ''
 
-	for item in source.items():
+	for item in content.items():
 
 		title = item('.title').text()				#get the text of the 'title' class
 
@@ -43,9 +43,9 @@ def crawler(source):
 			print(src('#main-content').text())
 			
 
-if __name__ == '__main__':
-
-	crawler( get_html() )
+# if __name__ == '__main__':
+def start():
+ 	crawler( get_html('https://www.ptt.cc/bbs/WomenTalk/index.html') )
 
 
 	
