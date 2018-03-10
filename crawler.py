@@ -41,11 +41,5 @@ def crawler(content):
 			src('.push').remove()					#remove push class 	(回覆)
 
 			print(src('#main-content').text())
-			
-
-# if __name__ == '__main__':
-def start():
- 	crawler( get_html('https://www.ptt.cc/bbs/WomenTalk/index.html') )
-
 
 	
